@@ -1,3 +1,10 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                     //
+//                                                                                                     //
+//  note:  to make electron package, open command windo to this main directory and run:  npm run make  //
+//                                                                                                     //
+//                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 if (require('electron-squirrel-startup')) return;
 //const app = require('app');
