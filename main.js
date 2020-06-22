@@ -27,7 +27,7 @@ function createWindow() {
     const menu = Menu.buildFromTemplate(menuTemplate);
   //  Menu.setApplicationMenu(menu);
 }
-app.commandLine.appendSwitch('remote-debugging-port', '9222')
+//app.commandLine.appendSwitch('remote-debugging-port', '9222')
 app.on('ready', createWindow)
 
 

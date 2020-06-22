@@ -25,14 +25,16 @@
   },
   "config": {
     "forge": {
-      "packagerConfig": {"icon":  ".\\showLogo.ico"},
+      "packagerConfig": {
+        "icon": ".\\showLogo.ico"
+      },
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "show_configurator2",
             "setupIcon": ".\\showLogo.ico",
-            "icon":  ".\\icon.ico"
+            "icon": ".\\icon.ico"
           }
         },
         {
