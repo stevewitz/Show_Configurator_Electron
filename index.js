@@ -15,6 +15,7 @@ const remote = require("electron").remote;
 const fs = require('fs');
 const os = require('os');
 const saveLocation = os.homedir() + "\\show";
+const dialog = remote.dialog;
 
 document.addEventListener('dragenter', (e) => {
     if ((e.target.id != dropzoneId) && ((e.target.id).substring(0,4) !="show" )  ){
