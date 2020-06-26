@@ -217,15 +217,42 @@ function saveEditButton() {
         }
     });
 
+  //  for(i=0; i<service.length; i++){
+  //      console.log('Service ' + i + ' = '+ service[i]);
+  //     addShowDiv(service[i]);
+   // }
+
     for(i=0; i<service.length; i++){
         console.log('Service ' + i + ' = '+ service[i]);
-        addShowDiv(service[i]);
+       addShowDiv(service[i],convertServiceSlides[i]);
+
+       try {
+           fs.mkdir(editPath + '/' + service[i], function (err) { // add proper directory
+               if (err) {
+                   console.log('failed to create directory');
+                   return console.error(err);
+               } else {
+                   console.log('Directory created successfully');
+               }
+           });
+       }
+       catch(err) {
+           console.log("error caught in make directory")
+       }
+
+
     }
+
+
+
+
     document.getElementById("wizdat").style.display = 'none';
     document.getElementById("buttons").style.display = 'none';
    // document.getElementById("flexShow").style.display = 'flex';
     document.getElementById("folders").style.display = 'block';
     document.getElementById("flexShowText").style.display = 'block';
+
+
 
 }
 
@@ -430,6 +457,7 @@ function addNewShow(){
 //***********************  EDIT EXISTING SHOW  *******************************
  function editExistingShow(){
  type = "edit";
+document.getElementById("saveConfig").style.display = 'none';
 
   console.log("Existing show goes here");
   // open directory dialog
