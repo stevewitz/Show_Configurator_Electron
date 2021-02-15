@@ -26,6 +26,13 @@ document.addEventListener('dragenter', (e) => {
     }
 
 }, false);
+
+// Make sure show folder exist, if not create it  --- added 02/15/2021 sw
+if (!fs.existsSync(saveLocation)) {
+    fs.mkdirSync(saveLocation, {
+        recursive: true
+    });
+}
 //
 //
 // this is for drop of welcome image BELOW
@@ -131,8 +138,8 @@ function dropShowFiles(divid, fromFolder){
 
 //888888888888888888888888888888888888888888888888888888888  Change to proper case
               switch (files[i].split('.').pop()) // files[i] contains the filename - the switch is on the filename extension
-              {
-                  case 'jpg':
+              { //fixed case for cap's 02/15/2021 sw
+                  case 'jpg': case 'JPG':
                       //check for slidebflag
                       if(slidebFlag === false){
                           fileCaseCorrected = files[i].toLowerCase();
@@ -148,11 +155,11 @@ function dropShowFiles(divid, fromFolder){
                       }
                       break;
 
-                  case 'mp3':
+                  case 'mp3': case 'MP3':
                       fileCaseCorrected = files[i].substring(0, files[i].indexOf('.')).toUpperCase() +files[i].substring(files[i].indexOf('.')).toLowerCase();
                       break;
 
-                  case 'mp4':
+                  case 'mp4': case 'MP4':
                       fileCaseCorrected = files[i].toLowerCase();
                       break;
 
