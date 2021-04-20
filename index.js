@@ -141,7 +141,7 @@ function dropShowFiles(divid, fromFolder){
               { //fixed case for cap's 02/15/2021 sw
                   case 'jpg': case 'JPG':
                       //check for slidebflag
-                      if(slidebFlag === false){
+                      if((slidebFlag === false) || (typeof slidebFlag === 'undefined')){
                           fileCaseCorrected = files[i].toLowerCase();
                       }
                       else{
