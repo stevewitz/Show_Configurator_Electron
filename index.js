@@ -433,7 +433,7 @@ function appendLeadingZeroes(n){
     if(n <= 9){
         return "0" + n;
     }
-    return n
+    return "" +n
 }
 
 //******************* add a new show button clicked *****************************
@@ -448,8 +448,8 @@ function addNewShow(){
 
     document.getElementById("saveFileLocation").innerHTML = document.getElementById("saveFileLocation").innerHTML + "This show will be saved at: " + saveLocation; //display to user the save show location
     // get info for Version
-     let current_datetime = new Date();
-     let formatted_date =   current_datetime.getFullYear()+appendLeadingZeroes(current_datetime.getMonth() + 1) + appendLeadingZeroes(current_datetime.getDate()) +appendLeadingZeroes(current_datetime.getHours())+appendLeadingZeroes(current_datetime.getMinutes());
+    let current_datetime = new Date();
+    let formatted_date =   current_datetime.getFullYear()+appendLeadingZeroes(current_datetime.getMonth() + 1) + appendLeadingZeroes(current_datetime.getDate()) +appendLeadingZeroes(current_datetime.getHours())+appendLeadingZeroes(current_datetime.getMinutes());
      readDatFile( saveLocation + "/master_wiz.dat"); // put default values in form
      document.getElementById("Version").value = formatted_date;// now put in updated version number
 
