@@ -23,6 +23,10 @@
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
   },
+  "overrides": {
+    "plist": "^3.1.0",
+    "@xmldom/xmldom": "^0.8.15"
+  },
   "config": {
     "forge": {
       "packagerConfig": {
